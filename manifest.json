@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Google Calendar Meeting Templates",
+    "description": "Insert preset templates into your calendar meeting description",
+    "version": "1.0",
+    "permissions": ["activeTab", "scripting"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "Images/hello.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://calendar.google.com/*"],
+            "js": ["content.js"],
+            "run_at": "document_idle"
+        }
+    ]
+  }
