@@ -41,11 +41,20 @@ document.getElementById('insertButton').addEventListener('click', () => {
     } else {
     console.log("The div containing 'Add description' was not found.");
   }
+  var descriptionBox = document.querySelector(".KCm9Q.lR3h6d");
+  var statusBox = document.querySelector(".FrSOzf");
+  if (descriptionBox) {
+    var button = document.createElement("button");
+    button.innerHTML = "Meetings Suck!";
+
+    // Add event listener to the button if needed
+    button.addEventListener("click", function () {
+        
+    // Button click logic
+    console.log("Button clicked!");
+    });
+      statusBox.appendChild(button);
+    } else {
+      console.log("Meeting description box not found.");
+  };
 }
-
-
-
-
-
-
-
