@@ -1,60 +1,56 @@
 document.getElementById('insertButton').addEventListener('click', () => {
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      chrome.scripting.executeScript({
-        target: { tabId: tabs[0].id },
-        function: insertTextIntoDescription,
-        args: ["OOW BOY"]
-      }, (results) => {
-        if (chrome.runtime.lastError) {
-            console.error('Error executing script: ', chrome.runtime.lastError.message);
-        } else {
-            console.log('Script executed successfully', results);
-        }
-      });
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    chrome.scripting.executeScript({
+      target: { tabId: tabs[0].id },
+      function: insertTextIntoDescription,
+      args: ["OOW BOY"]
+    }, (results) => {
+      if (chrome.runtime.lastError) {
+          console.error('Error executing script: ', chrome.runtime.lastError.message);
+      } else {
+          console.log('Script executed successfully', results);
+      }
     });
   });
+});
 
-  function insertTextIntoDescription() {
+// // change mouse icon
+// const customCursorImage = "Images/oowBOY.png";
 
-    // deleting the placeholder text
-    var element = document.querySelector('.KCm9Q.lR3h6d');
-    // Check if the element exists
-    if (element) {
-        // Append the string to the existing class attribute
-        element.classList.add('CDELXb');
-    }
+// document.addEventListener("mouseenter", () => {
+//   document.body.style.cursor = `url(${customCursorImage}), auto`;
+// });
+// document.addEventListener("mouseleave", () => {
+//   document.body.style.cursor = "default";
+// });
 
-    const descriptionField = document.querySelector('.hj99tb.editable');
-    // Check if the div was found
-    if (descriptionField) {
-        // Remove the placeholder text
-        descriptionField.textContent = "";
 
-        // Insert the desired text into the div
-        descriptionField.innerHTML = 
-        `<h3>OOW BOY</h3>
-        <b>Meetings Suck!</b>
-        <br><br>
-        <b><u>Agenda:</b></u>
-        <li>Placeholder</li>
-        `;
-    } else {
-    console.log("The div containing 'Add description' was not found.");
+
+function insertTextIntoDescription() {
+
+  // deleting the placeholder text
+  var element = document.querySelector('.KCm9Q.lR3h6d');
+  // Check if the element exists
+  if (element) {
+      // Append the string to the existing class attribute
+      element.classList.add('CDELXb');
   }
-  var descriptionBox = document.querySelector(".KCm9Q.lR3h6d");
-  var statusBox = document.querySelector(".FrSOzf");
-  if (descriptionBox) {
-    var button = document.createElement("button");
-    button.innerHTML = "Meetings Suck!";
 
-    // Add event listener to the button if needed
-    button.addEventListener("click", function () {
-        
-    // Button click logic
-    console.log("Button clicked!");
-    });
-      statusBox.appendChild(button);
-    } else {
-      console.log("Meeting description box not found.");
-  };
+  const descriptionField = document.querySelector('.hj99tb.editable');
+  // Check if the div was found
+  if (descriptionField) {
+      // Remove the placeholder text
+      descriptionField.textContent = "";
+
+      // Insert the desired text into the div
+      descriptionField.innerHTML = 
+      `<h3>OOW BOY</h3>
+      <b>Meetings Suck!</b>
+      <br><br>
+      <b><u>Agenda:</b></u>
+      <li>Placeholder</li>
+      `;
+  } else {
+  console.log("The div containing 'Add description' was not found.");
+  }
 }
