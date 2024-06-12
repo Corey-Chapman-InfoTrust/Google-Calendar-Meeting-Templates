@@ -1,38 +1,6 @@
 // content.js
 console.log("loaded");
 
-// Function to inject CSS styles
-function injectStyles() {
-    var style = document.createElement('style');
-    style.innerHTML = `
-        .awesome-button {
-            background-color: #ff6347; /* Tomato color */
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 12px;
-            border: none;
-            box-shadow: 0 4px #999;
-        }
-        
-        .awesome-button:hover {
-            background-color: #ff4500; /* Darker tomato color */
-        }
-
-        .awesome-button:active {
-            background-color: #ff4500;
-            box-shadow: 0 2px #666;
-            transform: translateY(2px);
-        }
-    `;
-    document.head.appendChild(style);
-}
-
 //Button Injector
 function addMeetingButton() {
     var descriptionBox = document.querySelector(".KCm9Q.lR3h6d");
@@ -40,7 +8,6 @@ function addMeetingButton() {
     if (descriptionBox) {
       var button = document.createElement("button");
       button.innerHTML = "Meetings Suck!";
-      bustton.className = "awesome-button";
   
       // Add event listener to the button
       button.addEventListener("click", function() {
@@ -83,9 +50,6 @@ function addMeetingButton() {
       addMeetingButton();
     }
   }
-
-  // Inject styles when the content script is loaded
-injectStyles();
   
   // Check every 500 milliseconds (adjust as needed)
   var pollingInterval = setInterval(checkForElement, 500);
