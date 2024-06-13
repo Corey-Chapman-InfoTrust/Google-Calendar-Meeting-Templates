@@ -1,16 +1,17 @@
-// content.js
-console.log("loaded");
+// By Corey Chapman, InfoTrust LLC (c) 2024
+
 
 //Button Injector
 function addMeetingButton() {
     var descriptionBox = document.querySelector(".KCm9Q.lR3h6d");
     var statusBox = document.querySelector(".vfh3kc");
     if (descriptionBox) {
-      var button = document.createElement("button");
-      button.innerHTML = "Meetings Suck!";
+      var moreDetailsButton = document.createElement("Button");
+      moreDetailsButton.innerHTML = "Meetings Suck!";
+      moreDetailsButton.classList.add("moreDetailsButton");
   
       // Add event listener to the button
-      button.addEventListener("click", function() {
+      moreDetailsButton.addEventListener("click", function() {
 
         // deleting the placeholder text
         var element = document.querySelector('.KCm9Q.lR3h6d');
@@ -27,18 +28,36 @@ function addMeetingButton() {
             descriptionField.textContent = "";
       
             // Insert the desired text into the div
-            descriptionField.innerHTML = 
-            `<h3>OOW BOY</h3>
-            <b>Meetings Suck!</b>
-            <br><br>
-            <b><u>Agenda:</b></u>
-            <li>Placeholder</li>
+            descriptionField.innerHTML = `
+            <b>Meeting Agenda:</b>
+            <ul>
+                <li>Introductions/Catch-up (5-10 min)</li>
+                <li>Topics (15-20 min)</li> 
+                <li>Final thoughts and action items (5-10 min)</li>
+            </ul>
+            <b>Topics For Discussion:</b>
+            <ul>
+                <li></li>
+                <li></li> 
+                <li></li>
+            </ul>
+            <b>Assign the following roles to ensure this meeting stays efficient</b>
+            <ul>
+                <b>Facilitator</b> - <i>Who is keeping the meeting on track?</i>
+                <br>
+                <b>Timekeeper</b> - <i>Someone to ensure the time efficiency of the meeting</i>
+                <br>
+                <b>Notetaker</b> - <i>Responsible for documenting key action items, discussions, and questions</i>
+            </ul>
+            <br>
+            <b><i>Please arrive on time and help each other ensure the meeting ends on time!</i></b>
             `;
         } else {
         console.log("The div containing 'Add description' was not found.");
         }
       })
-      statusBox.appendChild(button);
+      
+      statusBox.appendChild(moreDetailsButton);
     } else {
       console.log("Meeting description box not found.");
   }};
@@ -51,8 +70,8 @@ function addMeetingButton() {
     }
   }
   
-  // Check every 500 milliseconds (adjust as needed)
-  var pollingInterval = setInterval(checkForElement, 500);
+// Check every 500 milliseconds (adjust as needed)
+var pollingInterval = setInterval(checkForElement, 500);
 
 // tap into the URL, /eventedit when someone clicks "more options"
 // when someone clicks Create -> Event

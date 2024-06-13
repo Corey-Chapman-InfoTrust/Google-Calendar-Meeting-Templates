@@ -1,0 +1,17 @@
+.moreDetailsButton {
+    font-family: "Google Sans";
+    font-weight: 500;
+    background-color: rgb(14, 114, 237);
+    color: white;            
+    padding: 0px 16px; 
+    line-height: 36px;       
+    border: none;              
+    cursor: pointer;           
+    font-size: 14px;           
+    border-radius: 4px;        
+    margin-top: 10px;          
+}
+
+.moreDetailsButton:hover {
+    opacity: 80%;
+}
