@@ -1,4 +1,4 @@
-.moreDetailsButton {
+.meetingsSuckButton {
     font-family: "Google Sans";
     font-weight: 500;
     background-color: rgb(14, 114, 237);
@@ -12,6 +12,6 @@
     margin-top: 10px;          
 }
 
-.moreDetailsButton:hover {
+.meetingsSuckButton:hover {
     opacity: 80%;
 }
