@@ -28,16 +28,21 @@ const meetingNotes = `
 
 //More Options Button Injector
 function addMeetingsSuckButton() {
-  if (document.querySelector(".meetingsSuckButton")) return; // Check to see if the buttons have already been injected. If so, return out of the function
+  if (document.querySelector(".meetingsSuckCSS")) return; // Check to see if the buttons have already been injected. If so, return out of the function
     var moreOptionsBox = document.querySelector(".KCm9Q.lR3h6d"); // The full-screen popup box after clicking "More Options"
-    var newMeetingPopup = document.querySelector("REPLACE"); // The smaller popup when clicking "New Meeting"
-    
+    var newMeetingPopup = document.querySelector("#yDmH0d > div.I2Yrs.iWO5td > div > div.ecHOgf.RDlrG.Inn9w.iWO5td > span"); // The smaller popup when clicking "New Meeting"
+
     if (moreOptionsBox || newMeetingPopup) {
-      var parentElement = moreOptionsBox ? document.querySelector(".vfh3kc") : document.querySelector("REPLACE WITH CLASSES"); // Ternary Operator to set a variable to append button under
+
+      // Ternary Operator to set a variable to append button under
+      var parentElement = moreOptionsBox ? document.querySelector(".vfh3kc") : document.querySelector("#yDmH0d > div > div > div.ecHOgf.RDlrG.Inn9w.iWO5td > span > div > div.q2nced > div.K0f0Xc > div.ZX9XLb > div.BUmX4d > div.Dna1ee.JGCEqd > span > div > div.anMZof.BVTBSc.sUvU0d"); 
       
       var meetingsSuckButton = document.createElement("Button"); // Create the button
       meetingsSuckButton.innerHTML = "Meetings Suck!"; // Modify the text within the button
-      meetingsSuckButton.classList.add("meetingsSuckButton"); // Add CSS to the button 
+      meetingsSuckButton.classList.add("meetingsSuckCSS"); // Add CSS to the button'
+      if (newMeetingPopup) {
+        meetingsSuckButton.classList.add("moreOptionsMeetingsSuckCSS");
+      }
   
       // Add event listener to the button for when it is clicked
       meetingsSuckButton.addEventListener("click", function() {
@@ -57,7 +62,8 @@ function addMeetingsSuckButton() {
             descriptionField.innerHTML = meetingNotes; 
       })
       
-      parentElement.appendChild(meetingsSuckButton); // Add button below 
+      if (moreOptionsBox || newMeetingPopup)
+        parentElement.appendChild(meetingsSuckButton); // Add button below 
     }};
   
 // Check every 500 milliseconds (adjust as needed)

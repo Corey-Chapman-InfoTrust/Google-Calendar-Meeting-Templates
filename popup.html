@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
   <title>OOW BOY</title>
@@ -8,45 +9,93 @@
       width: 400px;
       background: linear-gradient(to bottom, #0C6DC7, #bcbec0);
       cursor: url('Images/oowboy.png'), auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     button {
-      width: 100%;
+      width: 75%;
       padding: 10px;
       font-size: 16px;
-      cursor: pointer;  
+      cursor: pointer;
     }
     .button-properties {
-      background: #BCBEC0;
-      border: black;
-      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+      background: #bcbec0;
+      color: #000000;
+      font-weight: bold;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     .button-properties:hover {
       transform: scale(1.02);
-      opacity: 0.9;
-      box-shadow: 15px 15px 25px rgba (0, 0, 0, 0.5);
+      box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.5);
+      animation: pulse 0.6s infinite;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
     }
     .pop-out-image {
-      /* border: 5px solid #BCBEC0; */
       box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
       background: rgba(188, 190, 192, 0.15);
       border-radius: 15px;
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .pop-out-image:hover {
-      transform: scale(1.1);
-      box-shadow: 15px 15px 25px rgba (0, 0, 0, 0.7);
+      box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.7);
+      animation: dance 0.25s linear infinite;
     }
-    .popup-menu-item{
-      cursor: url('Images/oowboy.png'), auto;
+    @keyframes dance {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(20px);
+      }
+    }
+    .textCSS{
+      color:white;
+      transition: color 0.3;
+    }
+    @keyframes rainbow {
+      0% {
+        color: red;
+      }
+      16.7% {
+        color: orange;
+      }
+      33.3% {
+        color: yellow;
+      }
+      50% {
+        color: green;
+      }
+      66.7% {
+        color: blue;
+      }
+      83.3% {
+        color: indigo;
+      }
+      100% {
+        color: violet;
+      }
+    }
+  .pop-out-image:hover ~ .textCSS {
+      animation: rainbow 4s infinite;
     }
   </style>
 </head>
 <body>
-  <button id="insertButton" class="button-properties">OOW BOY</button>
+  <button class="button-properties">OOW BOY</button>
   <script src="popup.js"></script>
-  <div style="text-align: center;">
-    <br><br>
-    <img src="Images/oowboy.png" width= "300" height="300" class="pop-out-image">
+  <h1 class="textCSS"><b>MAKE ME DANCE!!!</b></h1>
+  <img src="Images/oowboy.png" width="300" height="300" class="pop-out-image">
   </div>
 </body>
 </html>
