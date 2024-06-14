@@ -59,43 +59,26 @@
         transform: translateX(20px);
       }
     }
-    .textCSS{
-      color:white;
-      transition: color 0.3;
-    }
     @keyframes rainbow {
-      0% {
-        color: red;
-      }
-      16.7% {
-        color: orange;
-      }
-      33.3% {
-        color: yellow;
-      }
-      50% {
-        color: green;
-      }
-      66.7% {
-        color: blue;
-      }
-      83.3% {
-        color: indigo;
-      }
-      100% {
-        color: violet;
-      }
+      0% { color: red; }
+      16% { color: orange; }
+      33% { color: yellow; }
+      50% { color: green; }
+      66% { color: blue; }
+      83% { color: indigo; }
+      100% { color: violet; }
     }
-  .pop-out-image:hover ~ .textCSS {
-      animation: rainbow 4s infinite;
+   
+    .makeMeDance {
+      animation: rainbow 1s linear infinite;
     }
   </style>
 </head>
 <body>
-  <button class="button-properties">OOW BOY</button>
-  <script src="popup.js"></script>
-  <h1 class="textCSS"><b>MAKE ME DANCE!!!</b></h1>
-  <img src="Images/oowboy.png" width="300" height="300" class="pop-out-image">
+  <button class="button-properties" id="OOWBOY">OOW BOY</button>
+  <h1 id="makeMeDance" style="color: white;"><b>MAKE ME DANCE!!!</b></h1>
+  <img id="catBurger" src="Images/oowboy.png" width="300" height="300" class="pop-out-image">
   </div>
+  <script src="popup.js"></script>
 </body>
 </html>

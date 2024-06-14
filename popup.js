@@ -1,18 +1,19 @@
-document.getElementById('insertButton').addEventListener('click', () => {
-  // Open the external link
-  window.open('https://www.youtube.com/watch?v=xm3YgoEiEDc', '_blank');
+function eventListeners(){
+var image = document.getElementById('catBurger');
+var text = document.getElementById('makeMeDance');
+var button = document.getElementById('OOWBOY');
 
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    chrome.scripting.executeScript({
-      target: { tabId: tabs[0].id },
-      function: insertTextIntoDescription,
-      args: ["OOW BOY"]
-    }, (results) => {
-      if (chrome.runtime.lastError) {
-          console.error('Error executing script: ', chrome.runtime.lastError.message);
-      } else {
-          console.log('Script executed successfully', results);
-      }
-    });
-  });
+image.addEventListener('mouseover', function () {
+  text.classList.add('makeMeDance');
 });
+
+image.addEventListener('mouseout', function () {
+  text.classList.remove('makeMeDance');
+});
+
+button.addEventListener('click', function () {
+  window.open('https://www.youtube.com/watch?v=xm3YgoEiEDc', '_blank');
+});
+}
+
+document.addEventListener('DOMContentLoaded', eventListeners);
