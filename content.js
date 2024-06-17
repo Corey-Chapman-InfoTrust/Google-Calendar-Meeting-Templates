@@ -48,7 +48,7 @@ function addMeetingsSuckButton() {
       meetingsSuckButton.addEventListener("click", function() {
         
         // Set a variable for the "Add description" text
-        var addDescription = moreOptionsBox ? document.querySelector(".KCm9Q.lR3h6d") : document.querySelector(".KCm9Q.r7kft.u3bW4e");
+        var addDescription = moreOptionsBox ? document.querySelector(".KCm9Q.lR3h6d") : document.querySelector(".KCm9Q.r7kft");
         // Check if the element exists
         if (addDescription)
             // Append the string to the existing class to force it to disappear
