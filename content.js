@@ -52,13 +52,13 @@ function addMeetingsSuckButton() {
         // Check if the element exists
         if (addDescription)
             // Append the string to the existing class to force it to disappear
-            // TODO: Maybe delete the entire element?
             addDescription.classList.add('CDELXb');
       
         const descriptionField = document.querySelector('.hj99tb.editable'); // this is the description box
         // Check if the div was found
         if (descriptionField)
             // Insert the desired text into the div
+            descriptionField.textContent = "";
             descriptionField.innerHTML = meetingNotes; 
       })
       
