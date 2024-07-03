@@ -2,17 +2,27 @@
 // todo: Modify meeting title?
 
 const meetingNotes = `
-          <b>Meeting Agenda:</b>
+          <b>Meeting Objective</b>
+          <br><br>
+          <i>[Clear, concise meeting objective]</i>
+          <br><br>
+          <b>Agenda</b>
           <ul>
-              <li>Introductions/Catch-up (5-10 min)</li>
-              <li>Topics (15-20 min)</li> 
-              <li>Final thoughts and action items (5-10 min)</li>
-          </ul>
-          <b>Topics For Discussion:</b>
-          <ul>
-              <li></li>
-              <li></li> 
-              <li></li>
+              <li>
+                  <b>5-10 min:</b> Introductions/Catch-up
+              </li>
+              <li>
+                  <b>x min:</b> Topic 1 - Led by [Name]
+              </li>
+              <li>
+                  <b>x min:</b> Topic 2 - Led by [Name]
+              </li>
+              <li>
+                  <b>x min:</b> Topic 3 - Led by [Name]
+              </li>
+              <li>
+                  <b>5-10 min:</b> Final thoughts and action items
+              </li>
           </ul>
           <b>Assign the following roles to ensure this meeting stays efficient</b>
           <ul>
