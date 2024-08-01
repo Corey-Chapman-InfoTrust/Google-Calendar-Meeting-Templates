@@ -1,37 +1,23 @@
 const meetingNotes = `
-          <b>Meeting Objective</b>
-          <br><br>
-          <i>[Clear, concise meeting objective]</i>
-          <br><br>
-          <b>Agenda</b>
-          <ul>
-              <li>
-                  <b>5-10 min:</b> Introductions/Catch-up
-              </li>
-              <li>
-                  <b>x min:</b> Topic 1 - Led by [Name]
-              </li>
-              <li>
-                  <b>x min:</b> Topic 2 - Led by [Name]
-              </li>
-              <li>
-                  <b>x min:</b> Topic 3 - Led by [Name]
-              </li>
-              <li>
-                  <b>5-10 min:</b> Final thoughts and action items
-              </li>
-          </ul>
-          <b>Assign the following roles to ensure this meeting stays efficient</b>
-          <ul>
-              <b>Facilitator</b> - <i>Keep the meeting on track</i>
-              <br>
-              <b>Timekeeper</b> - <i>Ensure the time efficiency of the meeting</i>
-              <br>
-              <b>Notetaker</b> - <i>Responsible for documenting key action items, discussions, and questions</i>
-          </ul>
-          <br>
-          <b><i>Please arrive on time and help each other ensure the meeting ends on time!</i></b>
-          `
+<b>Meeting Objective</b><br><br>
+<i>[Clear, concise meeting objective]</i><br><br>
+<b>Agenda</b>
+<ul>
+    <li><b>5-10 min:</b> Introductions/Catch-up</li>
+    <li><b>x min:</b> Topic 1 - Led by [Name]</li>
+    <li><b>x min:</b> Topic 2 - Led by [Name]</li>
+    <li><b>x min:</b> Topic 3 - Led by [Name]</li>
+    <li><b>5-10 min:</b> Final thoughts and action items</li>
+</ul>
+<b>Assign the following roles to ensure this meeting stays efficient</b>
+<ul>
+    <li><b>Facilitator</b> - <i>Keep the meeting on track</i></li>
+    <li><b>Timekeeper</b> - <i>Ensure the time efficiency of the meeting</i></li>
+    <li><b>Notetaker</b> - <i>Responsible for documenting key action items, discussions, and questions</i></li>
+</ul>
+<br>
+<b><i>Please arrive on time and help each other ensure the meeting ends on time!</i></b>
+`
 
 function addMeetingsSuckButton() {
   // Check to see if the buttons have already been injected. If so, return out of the function
